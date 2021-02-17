@@ -67,10 +67,10 @@ def table(request):
     columns = [desc[0] for desc in c.description]
     data = c.fetchall()
     df = pd.DataFrame(list(data), columns=columns)
-    writer = pd.ExcelWriter(basedir2 + r'\database.xlsx')
+    writer = pd.ExcelWriter(basedir2 + r'/database.xlsx')
     df.to_excel(writer, sheet_name='0', index=False)
     writer.save()
-    replace_id_loc2(basedir2, r'\database.xlsx', engine)
+    replace_id_loc2(basedir2, r'/database.xlsx')
 
     # получаем данные из формы далее записывает данные в таблицу users
     if request.method == "POST":
