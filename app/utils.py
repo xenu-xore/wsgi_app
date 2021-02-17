@@ -2,7 +2,6 @@ from os import path
 
 from jinja2 import Environment
 from jinja2 import FileSystemLoader
-from sqlalchemy import MetaData
 from sqlalchemy.orm import create_session
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import scoped_session
