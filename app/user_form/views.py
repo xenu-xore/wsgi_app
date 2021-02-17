@@ -33,7 +33,6 @@ def user_form(request):
     if request.method == 'POST':
         # объект SQLAlchemy для связи с существующей db
         engine = make_app().database_engine
-        basedir = os.path.abspath(os.path.dirname('app'))
 
         # получаем обрабатываем загруженый фаил
         file = request.files['file']
@@ -54,10 +53,7 @@ def table(request):
     regions = Region.query.all()
     queries = Users.query.all()
 
-    basedir = os.path.abspath(os.path.dirname('app'))
-
     # инициируем и преобразуем для чтетия выгрузку таблицы Users
-    engine = make_app().database_engine
     db = sqlite3.connect('data.db', uri=True)
     c = db.cursor()
     script = """
