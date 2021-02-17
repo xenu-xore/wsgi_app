@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="{{url_for('static', file='css/bootstrap.css')}}"/>
+    <link rel="stylesheet" href="{{url_for('static', file='css/style.css')}}"/>
+    <meta name="theme-color" content="#7952b3">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="{{url_for('static', file='css/form-validation.css')}}"/>
+    <title>Таблицы</title>
+    <script src="{{url_for('static', file='js/jquery.js')}}"></script>
+    <script src="{{url_for('static', file='js/main.js')}}"></script>
+</head>
+<link rel="icon" type="image/png" sizes="32x32" href="{{url_for('static', file='images/favicon-32x32.png')}}"/>
+<body class="text-center">
+<div class="container">
+    <!--cover-container -->
+    <div class="d-flex h-100 p-3 flex-column">
+        <header class="masthead mb-auto">
+            <div class="row">
+                <div class="col-md-8" >
+                    <h3 class="masthead-brand"><a href="/">Connector SQLite</a></h3>
+                </div>
+                <div class="col-md-4">
+                    <nav class="nav nav-masthead justify-content-center">
+                        <a class="nav-link" onclick="disable_btn(this, 'home_link')" id="home_link" href="{{url_for('home')}}">Главная</a>
+                        <a class="nav-link" onclick="disable_btn(this, 'table_link')" href="{{url_for('table')}}" id="table_link">Таблица</a>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <div class="container">
+
+            <main role="main" class="inner cover">
+                {% block body %}{% endblock %}
+            </main>
+        </div>
+        <footer class="my-5 pt-5 text-muted text-center text-small">
+            <div class="inner">
+                <p>Создано для <a href="#">Магнита</a>, by <a href="#">xor</a>.</p>
+            </div>
+        </footer>
+    </div>
+    <script src="{{url_for('static', file='js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{url_for('static', file='js/form-validation.js')}}"></script>
+</div>
+</body>
+</html>

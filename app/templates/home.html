@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+{% block body %}
+
+<h1 class="cover-heading">Заполнение Database</h1>
+<p class="lead">Вы можете ввести свои данные в форму, а далее экспортировать или импортировать. Все данные появятся в таблице</p>
+<p class="lead">
+    <a href="{{url_for('table')}}" class="btn btn-lg btn-secondary">Таблица</a>
+</p>
+
+{% endblock body %}
